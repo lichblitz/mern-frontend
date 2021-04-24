@@ -12,4 +12,4 @@ React application for managing Movies and Series hosted in a MongoDB.
 
 ## App details
 - Created with `npx create-react-app` and improved with `react-app-rewired` dependencie.
-- Project arquitecture is an aproach to the Clean Arquitecture concepts.
+- Project arquitecture is an aproach to the Clean Architecture concepts.
