@@ -15,9 +15,11 @@ React application for managing Movies and Series hosted in a MongoDB.
 
 ## Docker
 run `docker build -t mern-frontend:0.2.0 -f docker/Dockerfile .`
+
 run `docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3000:3000 -e CHOKIDAR_USEPOLLING=true mern-frontend:0.2.0`
 
 run `docker build -t mern-frontend:0.2.0 -f docker/Dockerfile.prod .`
+
 run `docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3000:3000 -e CHOKIDAR_USEPOLLING=true mern-frontend:0.2.0-prod`
 
 
