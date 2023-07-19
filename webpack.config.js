@@ -79,7 +79,9 @@ module.exports = function (_env, argv) {
                     { from: "public", to: "assets" }
                 ],
             }),
-            new Dotenv(),
+            new Dotenv({
+                path: ".env.local"
+            }),
         ].filter(Boolean),
         optimization: {
             minimize: isProduction,

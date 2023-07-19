@@ -1,0 +1,45 @@
+# HTTP server
+server {
+    listen 80;
+    server_name custom_domain.com www.custom_domain.com;
+
+    # Redirect HTTP to HTTPS
+    return 301 https://$host$request_uri;
+}
+
+# HTTPS server
+server {
+    listen 443 ssl http2;
+    server_name custom_domain.com www.custom_domain.com;
+
+    # SSL/TLS configuration (provide the correct paths to your SSL certificate and private key)
+    ssl_certificate /path/to/custom_domain_com.crt;
+    ssl_certificate_key /path/to/custom_domain_com.key;
+
+    # Security headers
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-XSS-Protection "1; mode=block";
+    add_header X-Frame-Options "DENY" always;
+
+    # Content Security Policy
+    # Modify as needed 
+    add_header Content-Security-Policy "default-src 'self'; object-src 'self'; img-src 'self' blob: data: https://images.src/; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; font-src 'self' data: https: ; connect-src *.googleapis.com/ *.google-analytics.com/" always;
+    
+    # Disable server tokens
+    server_tokens off;
+
+    # Access and error logs (optional but recommended)
+    access_log /var/log/nginx/your_domain_access.log;
+    error_log /var/log/nginx/your_domain_error.log;
+
+    # Root directory of your React app
+    root /usr/share/nginx/html;;
+
+    # React app index
+    index index.html;
+
+    # Location specific rules
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
