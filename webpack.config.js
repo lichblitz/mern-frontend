@@ -76,7 +76,7 @@ module.exports = function (_env, argv) {
             }),
             new CopyWebpackPlugin({
                 patterns: [
-                    { from: "public", to: "assets" }
+                    { from: "src/assets", to: "assets" }
                 ],
             }),
             new Dotenv({
