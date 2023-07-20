@@ -1,4 +1,4 @@
-{
+module.exports = {
     "env": {
         "browser": true,
         "es2021": true
@@ -25,6 +25,7 @@
         "@typescript-eslint",
         "react"
     ],
+    "ignorePatterns": ["src/**/*.test.ts", "dist", "*.config.js",  ".eslintrc.js"],
     "rules": {
         "sort-keys": [
             0
