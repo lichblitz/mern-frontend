@@ -25,7 +25,7 @@ module.exports = {
         "@typescript-eslint",
         "react"
     ],
-    "ignorePatterns": ["src/**/*.test.ts", "dist", "*.config.js",  ".eslintrc.js"],
+    "ignorePatterns": ["src/**/*.test.ts", "dist", "*.config.js",  ".eslintrc.js", "*.test.*"],
     "rules": {
         "sort-keys": [
             0
