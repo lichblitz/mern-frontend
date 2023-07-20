@@ -15,6 +15,8 @@ module.exports = {
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}', // The source files to collect coverage from (adjust the path to your source files)
     '!src/**/*.test.{ts,tsx}', // Exclude test files from coverage
+    "!src/main.tsx",
+    "!src/**/index.ts",
   ],
   setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
